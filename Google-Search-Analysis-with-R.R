@@ -1,0 +1,11 @@
+install.packages("reticulate")
+library(reticulate)
+py_install("pandas")
+py_install(packages = "matplotlib")
+install.packages("gtrendsR")
+library(gtrendsR)
+trendsnew<-gtrends(keyword = c("Machine Learning"),time = "today 12-m")
+data<-trendsnew
+show(data)
+library(ggplot2)
+plot(data)
